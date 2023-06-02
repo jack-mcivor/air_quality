@@ -21,7 +21,7 @@ if not LOCAL:
     stub = modal.Stub("air_quality_daily")
     image = modal.Image.debian_slim().pip_install(["hopsworks==3.2.0rc0", "geopy"])
 
-    @stub.function(image=image, schedule=modal.Period(days=1), secret=modal.Secret.from_name("jim-hopsworks-gcp"))
+    @stub.function(image=image, schedule=modal.Period(days=1), secret=modal.Secret.from_name("hopsworks"))
     def f():
         g()
 
